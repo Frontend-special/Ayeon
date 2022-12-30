@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script defer type="module" src="./quizz.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <form id="account-send-form">
+            <p>
+                은행선택:
+                <select id="bank-selector">
+                    <option>성용은행</option>
+                    <option>현서은행</option>
+                    <option>나실은행</option>
+                    <option>주람은행</option>
+                    <option>효진은행</option>
+                    <option>태기은행</option>
+                    <option>선영은행</option>
+                    <option>은선은행</option>
+                    <option>아연은행</option>
+                </select>
+            </p>
+            <p>
+                계좌입력:
+                <input id="account-input" maxlength="12" />
+            </p>
+            <button>제출</button>
+        </form>
+        <ul id="account-list">
+            <li>성용은행 : 12-********-34</li>
+        </ul>
+    </body>
+</html>

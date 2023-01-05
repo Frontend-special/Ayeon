@@ -31,5 +31,7 @@ function divition(originArr, divNumber) {
 구글링
 
 - 배열에 요소를 추가하는 방법
+- 배열을 복사하는 방법
+
 
 */

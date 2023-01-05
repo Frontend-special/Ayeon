@@ -11,7 +11,7 @@ const $list = document.querySelector('#ingredient-list');
 const INGREDIENT_LIST = new Map();
 
 // 재료를 삭제하는 함수
-// event target이 버튼과 맞지 않다면 반환해준다
+// event target이 버튼태그와 맞지 않는다면 반환해준다??
 // $tr에는 event target 과 가장 가까운 tr태그가 할당된다. ingredient에는 $tr의 td안에 있는 내용을 할당하는 것 같음
 // tr을 제거하고, 재료 리스트에서도 재료를 지워주는 함수
 
@@ -29,10 +29,10 @@ function deleteIngredient(e) {
 // 상수 tr에 추가할 태그? tr을 할당해주고 상수 tr안에 <td> 태그를 사용해 화면에 재료값과 무게값, 삭제 버튼을 보여줄 수 있게 코드를 작성한다
 // tr에 삭제 버튼을 클릭했을 시에 deleteIngredient 함수가 실행된다.
 // 재료 리스트에 ingredientValue, weightValue을 넣어주고 table에 tr을 추가해준다.
-// ''은 값이 들어있지 않다는 것 같음
+// $ingredient.value = ''; 여기서 ''은 값이 들어있지 않다는 것 같음 빈칸이 들어가는 것 같음
 
 $form.addEventListener('submit', (e) => {
-    e.preventDefault();
+    e.preventDefault(); // ???
     const ingredientValue = $ingredient.value;
     const weightValue = $weight.value;
     if (INGREDIENT_LIST.has(ingredientValue)) return alert('이미 존재하는 재료입니다');
@@ -48,7 +48,7 @@ $form.addEventListener('submit', (e) => {
 
     tr.addEventListener('click', deleteIngredient);
 
-    INGREDIENT_LIST.set(ingredientValue, weightValue);
+    INGREDIENT_LIST.set(ingredientValue, weightValue); //
     $table.append(tr);
     $ingredient.value = '';
     $weight.value = '';
@@ -73,8 +73,10 @@ $button.addEventListener('click', () => {
 구글링
 
 - 가장 가까운 태그를 불러오는 방법
-- 태그를 새로 만들 수 있는 방법?
-- 계속 값을 추가해줄 수 있는 방법...?
-- ...
+- 태그가 맞는지 아닌지 확인하는 방법
+- js로 태그 안에 내용을 넣는 방법
+- js로 요소를 생성하는 방법...?
+- 요소를 삭제하는 방법
+- 이미 가지고 있는 요소가 있는지 확인하는 방법
 
 */

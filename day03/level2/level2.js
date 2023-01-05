@@ -16,7 +16,7 @@ function NodeUserListInReservationList() {
     $reservation.innerHTML = '일치하는 내역이 없습니다';
 }
 
-// userPhonInput 에 숫자가 입력 되었을때 target으로 값을 불러와서
+// userPhonInput 에 숫자가 입력 되었을때 event target으로...? 값을 불러와서
 // 숫자 사이에 정규표현식을 사용해 하이픈을 넣어준다.
 
 $userPhonInput.addEventListener('input', (e) => {
@@ -35,7 +35,7 @@ $userPhonInput.addEventListener('input', (e) => {
 // 일치하는지 확인한 후에 일치한다면 예약번호를 화면에 내보내주고 일치하지 않을 경우 NodeUserListInReservationList를 실행한다
 
 $form.addEventListener('submit', (e) => {
-    e.preventDefault();
+    e.preventDefault(); // ??
     const userName = $userNameInput.value;
     const userPhone = $userPhonInput.value;
 
@@ -51,7 +51,7 @@ $form.addEventListener('submit', (e) => {
 - 구글링
 
 입력된 값을 받아오는 방법
-핸드폰 번호를 확인할 수 있는 정규 표현식
+핸드폰 번호에 -을 추가할 수 있는 정규 표현식
 받아온 값이 올바른지 확인할 수 있는 방법
 js로 태그에 글씨를 추가하는 방법
 */

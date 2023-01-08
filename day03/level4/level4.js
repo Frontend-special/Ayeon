@@ -52,6 +52,7 @@ Array.prototype.division = function (div) {
 
 // 페이지네이션 랜더링
 function renderPageNation() {
+    // 현재 페이지의 인덱스 번호를 알려주는? 변수?
     const pageNationList = PAGE_LST[currentPageIndx];
     $pageList.innerHTML = pageNationList
         .map((page) => {

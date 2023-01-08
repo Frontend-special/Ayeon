@@ -57,6 +57,6 @@ $addBtn.addEventListener('click', () => {
         // 추가가 안 되니까 제출 시도도 못함.. ㄱ-
         $table.append(tr);
     } else {
-        return checkIngredient;
+        return checkIngredient();
     }
 });

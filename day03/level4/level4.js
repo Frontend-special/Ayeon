@@ -43,7 +43,7 @@ Array.prototype.division = function (div) {
         paageNation_list.push(i);
     }
 
-    // 이건 뭐라고 하는지 모르겠다...
+    // 이건 뭐라고 하는지 모르겠다... 아! 페이지리스트 80을 division으로 10씩 잘라서 빈 배열이었던 PAGE_LST에 넣어주는 거 같음
     PAGE_LST = paageNation_list.division(paageNation_limit);
 
     // 페이지네이션 랜더링 실행...

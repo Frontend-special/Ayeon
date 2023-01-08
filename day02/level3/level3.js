@@ -42,9 +42,10 @@ $addBtn.addEventListener('click', () => {
     const ingredientValue = $ingredient.value;
     const weightValue = $weight.value;
 
-    // 이미 같은 재료가 들어가 있는지 검사를 해줘야 됨
+    // 이미 같은 재료가 들어가 있는지 검사를 해줘야 됨 (검사하는 게 이게 맞는 건가...?)
+    // table 태그 안에 td 의 값을 받아와서 있는지 없는지 해줘야 하는데 어떻게 해야하는지 몰겠음...
     // tr 태그에 추가해서 받아온 값을 innerhtml로 추가해줘야 함
-    if ($table != ingredientValue && $table != weightValue) {
+    if ($td != ingredientValue && $td != weightValue) {
         const tr = document.createElement('tr');
 
         tr.innerHTML = `
@@ -53,6 +54,7 @@ $addBtn.addEventListener('click', () => {
         `;
 
         // 추가가 된 것 같은데 몬가.. 추가가 된 거 같다가 사라짐...?
+        // 추가가 안 되니까 제출 시도도 못함.. ㄱ-
         $table.append(tr);
     } else {
         return checkIngredient;

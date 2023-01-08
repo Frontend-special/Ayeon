@@ -14,7 +14,6 @@
     (3) 표에 적힌 내용과 동일한 값이 입력되었을 때 이미 입력되어 있다고 alert으로 알려주기
 
 4. 단계별 구글링 키워드 생각하기
-    (1) input 태그에서 값을 받아올 수 있는 방법
     (2) input 에서 받은 값을 js로 table태그에 보여줄 수 있는 법
     (3) 값이 중복인지를 체크할 수 있는 방법 || alert를 js로 띄우는 방법
     (4) 테이블 태그 안에 있는 값 가져오기
@@ -48,10 +47,12 @@ $addBtn.addEventListener('click', () => {
     if ($td != ingredientValue && $td != weightValue) {
         const tr = document.createElement('tr');
 
-        tr.innerHTML = `<td>${ingredientValue}</td>
-        <td>${weightValue}</td>`;
+        tr.innerHTML = `
+        <td>${ingredientValue}</td>
+        <td>${weightValue}</td>
+        `;
 
-        // 추가가 된 것 같은데 몬가.. 추가가 됐다가 사라짐...?
+        // 추가가 된 것 같은데 몬가.. 추가가 된 거 같다가 사라짐...?
         $table.append(tr);
     } else {
         return checkIngredient;

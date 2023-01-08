@@ -37,12 +37,14 @@ function checkIngredient() {
     alert('이미 있는 재료입니다.');
 }
 
-$addBtn.addEventListener('click', () => {
+$addBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
     // 재료와 무게의 값을 받아옴
     const ingredientValue = $ingredient.value;
     const weightValue = $weight.value;
 
-    // 이미 같은 재료가 들어가 있는지 검사를 해줘야 됨 (검사하는 게 이게 맞는 건가...?)
+    // 이미 같은 재료가 들어가 있는지 검사를 해줘야 됨 (검사하는 게 이게 맞는 건가...?) 하지만 검사가 전혀 안 됨
     // table 태그 안에 td 의 값을 받아와서 있는지 없는지 해줘야 하는데 어떻게 해야하는지 몰겠음...
     // tr 태그에 추가해서 받아온 값을 innerhtml로 추가해줘야 함
     if ($td != ingredientValue && $td != weightValue) {
@@ -54,7 +56,7 @@ $addBtn.addEventListener('click', () => {
         `;
 
         // 추가가 된 것 같은데 몬가.. 추가가 된 거 같다가 사라짐...?
-        // 추가가 안 되니까 제출 시도도 못함.. ㄱ-
+        // 추가가 안 되니까 제출 시도도 못함.. ㄱ- 헉 프리벤트디폴트 추가하니까 됨 새로고침이 되면서 계속 사라져서 그런거였음
         $table.append(tr);
     } else {
         return checkIngredient();

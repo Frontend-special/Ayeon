@@ -21,11 +21,11 @@ function NodeUserListInReservationList() {
 
 $userPhonInput.addEventListener('input', (e) => {
     const phone = e.target.value;
-    const hiepnPhone = phone
+    const hiepnPhone = phone // 이게 왜 이렇게 되는 걸까...?
         .replace(/[^0-9]/g, '')
         .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, '$1-$2-$3')
         .replace(/(\-{1,2})$/g, '');
-    e.target.value = hiepnPhone;
+    e.target.value = hiepnPhone; // ????
 });
 
 // form 태그가 서브밋 되었을 때 발생하는 이벤트

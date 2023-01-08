@@ -44,7 +44,7 @@ $addBtn.addEventListener('click', () => {
 
     // 이미 같은 재료가 들어가 있는지 검사를 해줘야 됨
     // tr 태그에 추가해서 받아온 값을 innerhtml로 추가해줘야 함
-    if ($td != ingredientValue && $td != weightValue) {
+    if ($table != ingredientValue && $table != weightValue) {
         const tr = document.createElement('tr');
 
         tr.innerHTML = `

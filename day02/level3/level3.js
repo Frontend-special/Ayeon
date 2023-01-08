@@ -16,7 +16,8 @@
 4. 단계별 구글링 키워드 생각하기
     (1) input 태그에서 값을 받아올 수 있는 방법
     (2) input 에서 받은 값을 js로 table태그에 보여줄 수 있는 법
-    (3) 값이 중복인지를 체크하는 if문 || alert를 js로 띄우는 방법
+    (3) 값이 중복인지를 체크할 수 있는 방법 || alert를 js로 띄우는 방법
+    (4) 테이블 태그 안에 있는 값 가져오기
 */
 
 const $ingredient = document.querySelector('[name="ingredient"]');
@@ -24,9 +25,18 @@ const $weight = document.querySelector('[name="weight"]');
 const $addBtn = document.querySelector('.add-button');
 const $table = document.querySelector('table');
 
+// td 안에 있는 값이 동일한지 확인하기 위해... 추가한 건데 전혀 안 됨
+const $td = document.getElementsByTagName('td');
+
 console.log($ingredient);
 console.log($weight);
 console.log($addBtn);
+console.log($td);
+
+// 체크 후에 알럿 띄워주는 함수
+function checkIngredient() {
+    alert('이미 있는 재료입니다.');
+}
 
 $addBtn.addEventListener('click', () => {
     // 재료와 무게의 값을 받아옴
@@ -35,11 +45,15 @@ $addBtn.addEventListener('click', () => {
 
     // 이미 같은 재료가 들어가 있는지 검사를 해줘야 됨
     // tr 태그에 추가해서 받아온 값을 innerhtml로 추가해줘야 함
-    if()
-    const tr = document.createElement('tr');
-    tr.innerHTML = `<td>${ingredientValue}</td>
-    <td>${weightValue}</td>`;
+    if ($td != ingredientValue && $td != weightValue) {
+        const tr = document.createElement('tr');
 
-    // 추가가 된 것 같은데 몬가.. 안 됨..?..?
-    $table.append(tr);
+        tr.innerHTML = `<td>${ingredientValue}</td>
+        <td>${weightValue}</td>`;
+
+        // 추가가 된 것 같은데 몬가.. 추가가 됐다가 사라짐...?
+        $table.append(tr);
+    } else {
+        return checkIngredient;
+    }
 });
